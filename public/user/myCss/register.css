@@ -1,0 +1,135 @@
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;  
+  }
+  
+section{
+    background-color:  #F2F0EF;
+    padding: 100px 150px;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Fredoka+One&family=Open+Sans&display=swap');
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0%;
+}
+
+
+
+
+
+section{
+    padding-top: 100px;
+}
+
+.container {
+    background-color: white;
+}
+
+.container p,label {
+    color: darkgoldenrod;
+}
+
+.container label {
+    font-weight: bold; 
+}
+
+.container h2 {
+    color: darkgoldenrod;
+    font-size: 2.5em;
+    font-weight: 700;
+    padding-left: 40px;
+    padding-top: 30px;
+ 
+}
+
+.container a {
+   text-decoration: none;
+ 
+}
+
+.container a:hover {
+   color: #c4c700;
+ 
+}
+
+.container form{
+    display: grid;
+
+    padding-top: 80px;
+    padding-left: 80px;
+    padding-right: 40px;
+}
+
+#table-form {
+    width: 90%;
+}
+
+
+.container form input[type=email],input[type=password],[name=fname],input[name=lname],input[name=mobile] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+#button-register{
+    width: 90%;
+    height: 50px;
+    background-color: orange;
+    color: white;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease;
+    margin-top: 15px;
+    
+}
+
+#button-register:hover{
+    background-color: rgb(77, 77, 77);
+   
+}
+
+#have-account {
+    padding-top: 30px;
+    text-align: center;
+}
+
+#go-with-link {
+    color:rgb(197, 145, 0);
+}
+
+#go-with-link:hover {
+    text-decoration: underline;
+    color: orange;
+}
+
+@media (max-width:750px){
+    section{
+        background-color:  #F2F0EF;
+        padding: 50px 75px;
+
+    }
+}
+@media (max-width:500px){
+    section{
+        background-color:  #F2F0EF;
+        padding: 10px 20px;
+
+    }
+    .container form input[type=email],input[type=password],input[type=text],input[type=number] {
+        width: 90%;
+    }
+    .container h2 {
+        font-size: 2em;
+        padding-left: 25px;
+        padding-top: 15px;
+    }
+} */
