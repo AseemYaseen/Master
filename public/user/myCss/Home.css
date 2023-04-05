@@ -204,6 +204,22 @@ z-index: -1;
     height: inherit;
     border-radius: 40px;
     }
+
+    .card_image_soon{
+        width: inherit;
+        height: inherit;
+        border-radius: 40px;
+        /* filter: brightness(50%) */
+
+    }
+    .card_image_soon img{
+    width: inherit;
+    height: inherit;
+    border-radius: 40px;
+    object-fit: cover;
+    /* filter: brightness(50%) */
+
+    }
     
      .card .card_image img {
     width: inherit;
@@ -332,8 +348,8 @@ font-size: 20px;
 }
 .Pic2{
     background:
-    linear-gradient(to top,rgb(255, 255, 255),rgba(0, 0, 0, 0.037))
-    ,url(./MasterPiece-Pic/Aqaba1.jpg);
+    linear-gradient(to top,rgb(255, 255, 255),rgba(0, 0, 0, 0.037));
+    /* ,url(./MasterPiece-Pic/Aqaba1.jpg); */
     background-size: cover;
 
 }
@@ -412,7 +428,7 @@ font-size: 20px;
     height: 115%;
   } 
 
-  .offerG4 a{
+  .offerG4FA a{
     text-decoration: none;
     display: inline-block;
     color: rgb(255, 255, 255);

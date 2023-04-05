@@ -67,31 +67,34 @@
     </div>
 </section>
 
-<section class="section3Amman">
-        <h2>Make Your Choices !</h2>
-        <div class="selectFlex">
-            <div class="Select1">
-                <p>My budget is :</p>
-                <select>
-                <option>Under 100 JOD</option>
-                <option>From 100-300 JOD</option>
-                <option>From 300-700 JOD</option>
-                <option>More than 700 JOD</option>
-                </select>
-            </div>
-
-            <div class="Select2">
-                <p>I'm staying for :</p>
-                <select>
-                <option>1 Day</option>
-                <option>2 - 5 Days</option>
-                <option>6 - 10 Days</option>
-                <option>+ 10 Days</option>
-                </select>
-            </div>
+<form method="POST" action="{{ route('results') }}">
+    @csrf
+    <section class="section3Amman">
+      <h2>Make Your Choices !</h2>
+      <div class="selectFlex">
+        <div class="Select1">
+          <p>My budget is :</p>
+          <select name="budget">
+            <option value="0">Under 100 JOD</option>
+            <option value="1">From 100-300 JOD</option>
+            <option value="2">From 300-700 JOD</option>
+            <option value="3">More than 700 JOD</option>
+          </select>
         </div>
-           <a class="showResult" href="./results.html">ShowResults</a>       
-</section>  
+  
+        <div class="Select2">
+          <p>I'm staying for :</p>
+          <select name="stay">
+            <option value="0">1 Day</option>
+            <option value="1">2 - 5 Days</option>
+            <option value="2">6 - 10 Days</option>
+            <option value="3">+ 10 Days</option>
+          </select>
+        </div>
+      </div>
+      <button class="showResult" type="submit">ShowResults</button>
+    </section>
+  </form>
 
 @endsection
 @section('scroll')

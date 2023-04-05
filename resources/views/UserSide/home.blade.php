@@ -33,7 +33,7 @@ home
     <h2></h2>
     <div class="cards-list">
 
-      <a href="">
+      <a href="{{route('Amman')}}">
         <div class="card 1">
          <div class="card_image"><img class="imgCard0" src="./MasterPiece-Pic/Amman1.jpg" /></div>
           <div class="card_title title-white">
@@ -44,21 +44,21 @@ home
 
       <a href="#">
         <div class="card 1">
-          <div class="card_image"> <img src="./MasterPiece-Pic/Amman1.jpg" /> </div>
+          <div class="card_image_soon"> <img src="./MasterPiece-Pic/Aqaba1.jpg" /> </div>
           <div class="card_title title-white">
-            <p>Aqaba</p>
+            <p>Aqaba..(soon)</p>
           </div>
         </div>
       </a>
 
-      <a href="#">
+      {{-- <a href="#">
         <div class="card 1">
           <div class="card_image"> <img src="./MasterPiece-Pic/Amman1.jpg" /> </div>
           <div class="card_title title-white">
             <p>Irbid</p>
           </div>
         </div>
-      </a>
+      </a> --}}
         
           {{-- <div class="card 2">
           <div class="card_image">

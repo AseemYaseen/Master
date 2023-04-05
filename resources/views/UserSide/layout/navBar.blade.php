@@ -3,9 +3,9 @@
 
 
         <ul class="theNavItems">
-            <li><a class="active" href="./Home.html">Home</a></li>
-            <li><a href="./contact_us.html">Contact us</a></li>
-            <li><a href="./about_us.html">About us</a></li>
+            <li><a class="active" href="{{route('home')}}">Home</a></li>
+            <li><a href="{{route('contact')}}">Contact us</a></li>
+            <li><a href="{{route('about')}}">About us</a></li>
         </ul>
         <!-- <div class="SearchBar">   
             <input class="searchInp" type="text" placeholder="Search...">

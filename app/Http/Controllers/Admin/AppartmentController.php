@@ -116,3 +116,5 @@ class AppartmentController extends Controller
         //
     }
 }
+
+?>

@@ -46,9 +46,25 @@ class RangeController extends Controller
      * @param  \App\Models\range  $range
      * @return \Illuminate\Http\Response
      */
-    public function show(range $range)
+
+    // public function show(range $range)
+    // {
+    //     //
+    // }
+
+    public function show(Request $request)
     {
-        //
+        $budget = $request->input('budget');
+        $stay = $request->input('stay');
+
+        // Perform some logic to determine the results based on the user's selections
+        // For example:
+        $results = [
+            'budget' => $budget,
+            'stay' => $stay,
+        ];
+
+        return view('results')->with('results', $results);
     }
 
     /**

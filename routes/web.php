@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('UserSide.home');
-});
+})->name('home');
 
 // Route::get('/city', function () {
 //     return view('UserSide.city');
@@ -20,10 +20,21 @@ Route::get('/result', function () {
 });
 Route::get('/about', function () {
     return view('UserSide.about');
-});
+})->name('about');
+
 Route::get('/contact', function () {
     return view('UserSide.contact');
-});
+})->name('contact');
+
+Route::get('/amman', function () {
+    return view('UserSide.Amman');
+})->name('Amman');
+
+Route::get('/result', function () {
+    return view('UserSide.result');
+})->name('Result');
+
+Route::post('/results', 'ResultsController@show')->name('results');
 
 Route::middleware(['auth','verified'])->group(function () {
     Route::resource('/users', UserController::class);
@@ -59,3 +70,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+

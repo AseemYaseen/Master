@@ -142,3 +142,4 @@ class PlaygroundsController extends Controller
         return redirect()->route('playgrounds.index');
     }
 }
+?>
