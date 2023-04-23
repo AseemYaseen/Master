@@ -2,8 +2,8 @@
 <footer class="ftr">
     <div class="footerFlex">
         {{-- /img/Travellers Logo.png --}}
-        <div class="footer"><img class="Logo footerLogo" src="./user/img/Travellers Logo.png"> </div>
-        <div class="footer logofoot"><p>Copyrigh © Travelers-Jo/Aseem Yaseen</p><img src="./user/img/Un2.png" class="Logo myLogo"></div>
+        <div class="footer"><img class="Logo footerLogo" src="../user/img/TravellersLogo.png"> </div>
+        <div class="footer logofoot"><p>Copyrigh © Travelers-Jo/Aseem Yaseen</p><img src="../user/img/Un2.png" class="Logo myLogo"></div>
         <div class="footer">
             <div class="iconsFo">
              <a href="https://www.facebook.com/Asemyassen0/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>

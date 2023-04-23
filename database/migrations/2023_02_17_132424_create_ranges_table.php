@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('ranges', function (Blueprint $table) {
             $table->id();
-            $table->integer("budget_Range");
+            $table->string("budget_Range");
+            $table->string("stay");
             $table->timestamps();
         });
     }

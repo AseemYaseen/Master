@@ -25,7 +25,7 @@ Add Appartment
          
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Add Playground</h3>
+              <h3 class="card-title">Add Apartment</h3>
             </div> 
 
             <form action="{{route('Appartments.store')}}" method="post" enctype="multipart/form-data">
@@ -47,10 +47,15 @@ Add Appartment
                 <div class="form-group">
                   <label>Choose a Category</label>
                   <select name="category_id" class="custom-select">
-                     @foreach($ranges as $range) 
-                   <option value="{{$range->id}}">{{$range->budget_Range}}</option> 
+                     {{-- @foreach($ranges as $range)  --}}
+                   {{-- <option value="{{$range->id}}">{{$range->budget_Range}}</option>  --}}
+                   <option>{{"under100"}}</option> 
+                   <option>{{"100To300"}}</option> 
+                   <option>{{"300To700"}}</option> 
+                   <option>{{"More700"}}</option> 
+
                    {{-- {{isset($movie->image) ? $movie->image->movie_image : "" }} --}}
-                   @endforeach 
+                   {{-- @endforeach  --}}
                 </select>
               </div>
 

@@ -14,7 +14,8 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //
+        $Restaurant = Restaurant::All();
+        return view('Admin.Restaurants',compact('Restaurant'));
     }
 
     /**

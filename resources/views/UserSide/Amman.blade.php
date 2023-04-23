@@ -67,7 +67,7 @@
     </div>
 </section>
 
-<form method="POST" action="{{ route('results') }}">
+<form method="POST" action="{{ route('results.save') }}">
     @csrf
     <section class="section3Amman">
       <h2>Make Your Choices !</h2>
@@ -75,20 +75,20 @@
         <div class="Select1">
           <p>My budget is :</p>
           <select name="budget">
-            <option value="0">Under 100 JOD</option>
-            <option value="1">From 100-300 JOD</option>
-            <option value="2">From 300-700 JOD</option>
-            <option value="3">More than 700 JOD</option>
+            <option value="under100">Under 100 JOD</option>
+            <option value="100To300">From 100-300 JOD</option>
+            <option value="300To700">From 300-700 JOD</option>
+            <option value="more700">More than 700 JOD</option>
           </select>
         </div>
   
         <div class="Select2">
           <p>I'm staying for :</p>
           <select name="stay">
-            <option value="0">1 Day</option>
-            <option value="1">2 - 5 Days</option>
-            <option value="2">6 - 10 Days</option>
-            <option value="3">+ 10 Days</option>
+            <option value="1Day">1 Day</option>
+            <option value="2-5Days">2 - 5 Days</option>
+            <option value="6-10Days">6 - 10 Days</option>
+            <option value="+10 Days">+ 10 Days</option>
           </select>
         </div>
       </div>

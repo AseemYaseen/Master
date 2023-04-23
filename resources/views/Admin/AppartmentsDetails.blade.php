@@ -8,6 +8,17 @@ Fields Details
 @endsection
 
 @section('css')
+<style>
+  .imgDet{
+    border-radius: 20px;
+    width: 500px;
+  }
+  .locatedAt{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28px;
+    color: rgb(82, 45, 1)
+  }
+</style>
 
 @endsection
 
@@ -27,7 +38,7 @@ Categories Details
         <div class="col-12 col-sm-6">
           <div class="col-12">
             {{-- {{dd($playgroundsDetails)}} --}}
-            <img src="{{URL::asset("storage/image/$AppartmentDetails->image")}}" class="product-image" alt="Category image">
+            <img class="imgDet" src="{{URL::asset("storage/image/$AppartmentDetails->image")}}" class="product-image" alt="Category image">
           </div>
           {{-- <div class="col-12 product-image-thumbs">
             <div class="product-image-thumb active"><img src="../../dist/img/prod-1.jpg" alt="Product Image"></div>
@@ -39,6 +50,7 @@ Categories Details
           
         </div>
         <div class="col-12 col-sm-6">
+          <h2 class="locatedAt">Located at :</h2>
           <h3 class="my-3">{{$AppartmentDetails->location}}</h3>
           <hr>
           <div class="col-12 col-sm-6">

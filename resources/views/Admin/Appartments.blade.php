@@ -4,7 +4,7 @@
 @endsection
 
 @section('TheHead')
- Playgrounds Table
+ Apartments Table
 @endsection
 
 @section('css')

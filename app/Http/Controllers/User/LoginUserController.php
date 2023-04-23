@@ -18,27 +18,27 @@ class LoginUserController extends Controller
     {
         return view('UserSide.login');
 
+
     }
     public function LoginPost(LoginRequest $request): RedirectResponse
     {
-            $request->authenticate();
-
-            $request->session()->regenerate();
-
-                $email=$request->email;
-            $password=$request->password;
-
-            if(Auth::attempt(['email'=>$email,'password'=>$password]))
-            {
-                // $request->session()->regenerate();
-
-                return redirect()->route('user.index');
-
+        $request->authenticate();
+    
+        $request->session()->regenerate();
+    
+        $email=$request->email;
+        $password=$request->password;
+    
+        if(Auth::attempt(['email'=>$email,'password'=>$password]))
+        {
+            $user = Auth::user();
+            
+            if ($user->is_admin == 1) {
+                return redirect()->route('dashboard');
+            } else {
+                return redirect()->route('home');
             }
-
-
-
-
+        }
     }
     public function destroy(Request $request): RedirectResponse
     {
@@ -48,6 +48,6 @@ class LoginUserController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('user.index');
+        return redirect()->route('home');
     }
 }

@@ -30,7 +30,4 @@ class range extends Model
         return $this->hasOne(Restaurant::class);
     }
 
-
-
-
 }

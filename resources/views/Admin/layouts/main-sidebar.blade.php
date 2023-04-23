@@ -92,10 +92,10 @@
                 <p>Apartments</p>
               </a>
             </li>
-
             <li class="nav-item">
-              <a href="{{ url('reservation') }}" class="nav-link">
-                <i class="nav-icon fas fa-edit"></i>
+              <a href="{{route('Restaurants.index')}}" class="nav-link">
+                {{-- <i class="far fa-circle nav-icon"></i> --}}
+                <i class="nav-icon fas fa-tree"></i>
                 <p>Restaurants</p>
               </a>
             </li>

@@ -1,6 +1,5 @@
 <nav class="navFlex">
-    <img class="Logo" src="./user/img/Travellers Logo.png">
-
+    <img class="Logo" src="../user/img/TravellersLogo.png">
 
         <ul class="theNavItems">
             <li><a class="active" href="{{route('home')}}">Home</a></li>
@@ -15,7 +14,14 @@
         </div> -->
         
         
-        <li class="theNavItems"><a class="loginSty" href="{{route('user.login')}}">login / register</a></li> 
+        @if(auth()->check())
+        <form action="{{ route('logout') }}" method="POST">
+            @csrf
+            <li class="theNavItems"><a class="loginSty" href="{{route('user.logout')}}">Logout</a></li>
+        </form>
+    @else
+        <li class="theNavItems"><a class="loginSty" href="{{route('user.login')}}">login / register</a></li>
+    @endif
 
             <!-- <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">

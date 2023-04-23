@@ -18,6 +18,7 @@ class AppartmentController extends Controller
 
     {
         $appartments= Appartment::all();
+       
 
         return view('Admin.Appartments',compact('appartments'));
 
@@ -111,9 +112,10 @@ class AppartmentController extends Controller
      * @param  \App\Models\Appartment  $appartment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Appartment $appartment)
+    public function destroy(Appartment $appartment,$id)
     {
-        //
+        Appartment::destroy($id);
+        return redirect()->route('Appartments.index');
     }
 }
 

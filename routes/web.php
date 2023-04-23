@@ -2,10 +2,12 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\User\RegisterUserController;
 use App\Http\Controllers\User\LoginUserController;
+use App\Http\Controllers\User\ResultsController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AmmanController;
 use App\Http\Controllers\Admin\RangeController;
 use App\Http\Controllers\Admin\AppartmentController;
+use App\Http\Controllers\Admin\RestaurantController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,20 +32,21 @@ Route::get('/amman', function () {
     return view('UserSide.Amman');
 })->name('Amman');
 
-Route::get('/result', function () {
-    return view('UserSide.result');
-})->name('Result');
 
-Route::post('/results', 'ResultsController@show')->name('results');
+Route::get('/results', [ResultsController::class, 'index'])->name('results');
+Route::post('/resultsSave', [ResultsController::class, 'saveResults'])->name('results.save');
 
-Route::middleware(['auth','verified'])->group(function () {
+
+Route::middleware(['auth','verified','Admin'])->group(function () {
     Route::resource('/users', UserController::class);
     Route::resource('/Amman', AmmanController::class);
     Route::resource('/Appartments', AppartmentController::class);
+    Route::resource('/Restaurants', RestaurantController::class);
     Route::resource('/ranges', RangeController::class);
     Route::get('/dashboard', function () {
         return view('Admin.welcome');
     })->name('dashboard');
+
     Route::get('/dashboard/cities', function () {
         return view('Admin.cities');
     })->name('cities');
@@ -51,17 +54,14 @@ Route::middleware(['auth','verified'])->group(function () {
 });
 
 
-Route::get('/Registers',[RegisterUserController::class,'index'])->name('Registers');
-Route::post('/Registerss',[RegisterUserController::class,'store'])->name('Registerss');
-
 Route::name('user.')->prefix('user')->group(function () {
     Route::get('/login', [LoginUserController::class, 'index'])->name('login');
-
+    Route::post('/logina', [LoginUserController::class, 'LoginPost'])->name('loginPost');
+    Route::get('/logina', [LoginUserController::class, 'destroy'])->name('logout');
+    Route::get('/Registers',[RegisterUserController::class,'index'])->name('Registers');
+    Route::post('/Registerss',[RegisterUserController::class,'store'])->name('Registerss');
 });
 
-Route::get('/dashboard', function () {
-    return view('Admin.welcome');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
