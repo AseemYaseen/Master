@@ -1,6 +1,6 @@
 @extends('Admin.layouts.master')
 @section('title')
-Add Appartment
+Add Restaurant
 @endsection
 
 @section('css')
@@ -25,14 +25,23 @@ Add Appartment
          
           <div class="card card-primary">
             <div class="card-header">
-              <h3 class="card-title">Add Apartment</h3>
+              <h3 class="card-title">Add Restaurant</h3>
             </div> 
 
-            <form action="{{route('Appartments.store')}}" method="post" enctype="multipart/form-data">
+            <form action="{{route('Restaurants.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                <div class="card-body">
+
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Appartment Location</label>
+                  <label for="exampleInputEmail1">Restaurant Name</label>
+                  <input type="text" class="form-control @error('location') is-invalid @enderror" name="name" placeholder="Enter Location" value="{{ old('name') }}">
+                  @error('name')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                  @enderror
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Restaurant Location</label>
                   <input type="text" class="form-control @error('location') is-invalid @enderror" name="location" placeholder="Enter Location" value="{{ old('location') }}">
                   @error('location')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -40,7 +49,7 @@ Add Appartment
                 </div>
                 
                 <div>
-                  <label for="exampleInputEmail1">Price per night</label>
+                  <label for="exampleInputEmail1">Price per Meal</label>
                   <input type="text" class="form-control @error('price') is-invalid @enderror" name="price" placeholder="Enter a price" value="{{ old('price') }}">
                   @error('price')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -48,7 +57,7 @@ Add Appartment
                 </div>
                 
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Appartment Description</label>
+                  <label for="exampleInputPassword1">Restaurant Info</label>
                   <textarea rows="4" cols="50" type="text" class="form-control @error('description') is-invalid @enderror" name="description" placeholder="Add description">{{ old('description') }}</textarea>
                   @error('description')
                     <div class="invalid-feedback">{{ $message }}</div>
@@ -56,9 +65,9 @@ Add Appartment
                 </div>
                 
                 <div class="form-group">
-                  <label>Choose a Category</label>
+                  <label>Choose a Value</label>
                   <select name="value" class="custom-select @error('value') is-invalid @enderror">
-                    <option value="">Select a category</option>
+                    <option value="">Select a Range</option>
                     <option value="1" {{ old('value') == 1 ? 'selected' : '' }}>Under 100</option> 
                     <option value="2" {{ old('value') == 2 ? 'selected' : '' }}>100 to 300</option> 
                     <option value="3" {{ old('value') == 3 ? 'selected' : '' }}>300 to 700</option> 

@@ -4,7 +4,7 @@
 @endsection
 
 @section('TheHead')
- Apartments Table
+Restaurants Table
 @endsection
 
 @section('css')
@@ -59,7 +59,7 @@
         color: green;
     }
 </style>
-<a href="{{route('Appartments.create')}}" type="button" class="btn btn-inline bg-gradient-success btn-sm" style="">Add Appartment</a>
+<a href="{{route('Restaurants.create')}}" type="button" class="btn btn-inline bg-gradient-success btn-sm" style="">Add Restaurant</a>
 <div class="row">
     <div class="col-12">
       <div class="card">
@@ -74,7 +74,7 @@
             <thead>
               <tr>
                 <th>#</th>
-                <th>Number</th>
+                <th>Name</th>
                 <th>More Details</th>
                 <th>Edit</th>
                 <th>Delete</th>
@@ -82,21 +82,22 @@
             </thead>
             
             <tbody>
-              @if(!empty($appartments))
+              @if(!empty($restaurants))
                  <?php
                 $i=1
                 ?>
-                @foreach ($appartments as $appartment)
+                @foreach ($restaurants as $restaurant)
               <tr>
                 <td>{{$i++}}</td>
-               <td>{{$appartment->id}}</td> 
-               <td><a href="{{route('Appartments.show',$appartment->id)}}" class="MoreDatails"> See more details .. </a></td>
-                <td><a href="{{route('Appartments.edit',$appartment->id)}}" type="button" class="Editb">Edit</a></td> 
-                 <td><form class="butnMargin" action="{{route('Appartments.destroy',$appartment->id)}}" method="post"> 
-                    @method('DELETE')
-                    @csrf
-                    <button type="submit" class="DeleteB">Delete</button>
-                   </form>
+               <td>{{$restaurant->name}}</td> 
+               <td><a href="{{route('Restaurants.show',$restaurant->id)}}" class="MoreDatails"> See more details .. </a></td>
+                <td><a href="{{route('Restaurants.edit',$restaurant->id)}}" type="button" class="Editb">Edit</a></td> 
+                <td>
+                    <form class="butnMargin" action="{{route('Restaurants.destroy',$restaurant->id)}}" method="post">
+                        @method('DELETE')
+                        @csrf
+                        <button type="submit" onclick="return confirm('Are you sure ?');" class="DeleteB">Delete</button>
+                    </form>
                 </td>
     
               </tr>

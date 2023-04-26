@@ -4,7 +4,7 @@
 @endsection
 
 @section('TheHead')
-Appartments Details
+Restaurants Details
 @endsection
 
 @section('css')
@@ -18,12 +18,17 @@ Appartments Details
     font-size: 28px;
     color: rgb(82, 45, 1)
   }
+  .resName{
+    font-size: 40px;
+    color: rgb(76, 76, 0);
+    font-family:'Times New Roman', Times, serif;
+  }
 </style>
 
 @endsection
 
 @section('title_page')
-Categories Details
+Restaurant Details
 @endsection
 
 @section('title_page2')
@@ -38,7 +43,7 @@ Categories Details
         <div class="col-12 col-sm-6">
           <div class="col-12">
             {{-- {{dd($playgroundsDetails)}} --}}
-            <img class="imgDet" src="{{URL::asset("storage/image/$AppartmentDetails->image")}}" class="product-image" alt="Category image">
+            <img class="imgDet" src="{{URL::asset("storage/image/$RestaurantsDetails->image")}}" class="product-image" alt="Category image">
           </div>
           {{-- <div class="col-12 product-image-thumbs">
             <div class="product-image-thumb active"><img src="../../dist/img/prod-1.jpg" alt="Product Image"></div>
@@ -50,20 +55,22 @@ Categories Details
           
         </div>
         <div class="col-12 col-sm-6">
+          <h3 class="my-3 resName">{{$RestaurantsDetails->name}}</h3>
+          <hr>
           <h2 class="locatedAt">Located at :</h2>
-          <h3 class="my-3">{{$AppartmentDetails->location}}</h3>
+          <h3 class="my-3">{{$RestaurantsDetails->location}}</h3>
           <hr>
           <div class="col-12 col-sm-6">
             {{-- {{dd($playgroundsDetails->Categories)}} --}}
-            
-            <h3 class="my-3"> <p style="font-size:22px;">Min Range</p>{{$AppartmentDetails->range->budget_Range }}</h3>
+            <h3 class="my-3"> <p style="font-size:22px;">Min Range</p>{{$RestaurantsDetails->range->budget_Range }}</h3>
             <hr>
+
           <div class="bg-gray py-2 px-3 mt-4">
             <h3 class="mb-0">
-              price per night
+              price per Meal
             </h3>
             <h4 class="mt-0">
-              <p>{{$AppartmentDetails->price}} JD </p>
+              <p>{{$RestaurantsDetails->price}} JD </p>
             </h4>
           </div>
         </div>
@@ -76,7 +83,7 @@ Categories Details
           </div>
         </nav>
         <div class="tab-content p-3" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab" style="font-size: 22px;">{{$AppartmentDetails->description}} </div>
+          <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab" style="font-size: 22px;">{{$RestaurantsDetails->description}} </div>
         </div>
       </div>
     </div>

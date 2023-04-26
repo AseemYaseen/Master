@@ -27,7 +27,7 @@ class Restaurant extends Model
 
     
     public function range(){
-        return $this->belongsTo(range::class, 'range_id');
+        return $this->belongsTo(range::class, 'ranges_id');
     
     }
 }

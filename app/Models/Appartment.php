@@ -29,7 +29,6 @@ class Appartment extends Model
         return $this->belongsTo(range::class, 'ranges_id');
 
         
-    
     }
 
 }
