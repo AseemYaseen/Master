@@ -95,7 +95,7 @@
                  <td><form class="butnMargin" action="{{route('Appartments.destroy',$appartment->id)}}" method="post"> 
                     @method('DELETE')
                     @csrf
-                    <button type="submit" class="DeleteB">Delete</button>
+                    <button type="submit" onclick="return confirm('Are you sure ?');" class="DeleteB">Delete</button>
                    </form>
                 </td>
     

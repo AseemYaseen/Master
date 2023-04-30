@@ -101,7 +101,7 @@
             </li>
 
             <li class="nav-item">
-              <a href="{{ url('contact') }}" class="nav-link">
+              <a href="{{route('Contact.index')}}" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>Users Messages</p>
               </a>

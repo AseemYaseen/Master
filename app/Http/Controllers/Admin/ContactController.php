@@ -1,7 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Admin;
+use App\Http\Controllers\Controller;
 use App\Models\Contact;
 use Illuminate\Http\Request;
 
@@ -14,7 +14,15 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contact = Contact::all();
+        return view("Admin.userMessages", compact("contact"));
+        
+    }
+    public function sucsess()
+    {
+ 
+        
+        
     }
 
     /**
@@ -24,7 +32,7 @@ class ContactController extends Controller
      */
     public function create()
     {
-        //
+        return view("userSide.contact");
     }
 
     /**
@@ -33,10 +41,32 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
+public function store(Request $request)
+{
+    $validatedData = $request->validate([
+        'Name' => 'required',
+        'Email' => 'required|email',
+        'Number' => 'required|numeric|digits:10',
+        'Subject' => 'required',
+    ], [
+        'Name.required' => 'Please write your name',
+        'Email.required' => 'Please write your email.',
+        'Email.email' => 'Please enter a valid email address.',
+        'Number.required' => 'Please write your phone number.',
+        'Number.numeric' => 'Your phone number should only contain digits.',
+        'Number.digits' => 'Your phone number should have exactly 10 digits.',
+        'Subject.required' => 'Don\'t leave your message empty!',
+    ]);
+    
+    $message = new Contact();
+    $message->Name = $validatedData['Name'];
+    $message->Email = $validatedData['Email'];
+    $message->phoneNumber = $validatedData['Number'];
+    $message->Message = $validatedData['Subject'];
+    $message->save();
+    
+    return redirect()->route('Contact.create')->with('success', 'Your message has been sent !');
+}
 
     /**
      * Display the specified resource.

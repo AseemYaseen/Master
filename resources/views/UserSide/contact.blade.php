@@ -11,12 +11,51 @@ contact
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{{asset('user/myCss/contactUS.css') }}">
+<style>
+.invalid-feedback {
+  position: absolute;
+  color: red;
+  font-size: 13px;
+  margin-top: -3px;
+}
+
+label + .input {
+  margin-top: 20px;
+}
+
+input[type="submit"] {
+  margin-top: 30px;
+}
+
+
+.email-input {
+  /* Add any custom styles for the email input field here */
+  /* For example: */
+  border: 1px solid gray;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.alert-success{
+    color: rgb(0, 193, 0);
+    font-size: 30px;
+    font-weight: 700;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+    </style>
 
 @endsection
 
 
+
+
 {{--============= showCase ===============--}}
 @section('underNav')
+@if (session('success'))
+<div class="alert alert-success">
+    {{ session('success') }}
+</div>
+@endif
 <div class="WelcomeContent">
     <h1 class="Welcome"><span> us</span></h1>
     <div class="contactHead">
@@ -36,15 +75,25 @@ contact
     <h3>Send a message</h3>
 
     <div class="container">
-    <form action="">
+    <form action="{{route('Contact.store')}}" method="POST">
+        @csrf
         <label class="label" for="fname">Name</label>
-        <input class="input" type="text" id="fname" name="name" placeholder="Your name..">
+        @error('Name')
+        <div class="invalid-feedback">{{ $message }}</div>
+      @enderror
+        <input class="input @error('Name') is-invalid @enderror" type="text" id="fname" name="Name" placeholder="Your name.." value="{{ old('Name') }}">
     
-        <label for="email">Email</label>
-        <input class="input" type="text" id="email" name="email" placeholder="Your email..">
+        <label class="label" for="email">Email</label>
+        @error('Email')
+        <div class="invalid-feedback">{{ $message }}</div>
+      @enderror
+        <input class="input @error('Email') is-invalid @enderror" type="text" id="email" name="Email" placeholder="Your email.." value="{{ old('Email') }}">
 
-        <label for="phone">Phone Number</label>
-        <input class="input" type="number" id="phone" name="phone" placeholder="Your phone number">
+        <label class="label" for="phone">Phone Number</label>
+        @error('Number')
+        <div class="invalid-feedback">{{ $message }}</div>
+      @enderror
+        <input class="input @error('Number') is-invalid @enderror" type="number" id="phone" name="Number" placeholder="Your phone number" value="{{ old('Number') }}">
 
         <!-- <label class="label" for="country">Country</label>
         <select id="country" name="country">
@@ -54,11 +103,14 @@ contact
         </select> -->
     
         <label class="label" for="subject">Subject</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-    
+        @error('Subject')
+        <div class="invalid-feedback">{{ $message }}</div>
+      @enderror
+        <textarea id="subject" name="Subject" placeholder="Write something.." style="height:200px">{{ old('Subject') }}</textarea>
         <input id="msg" type="submit" value="Submit">
     </form>
     </div>
+
 </section>
 
 @endsection
@@ -68,7 +120,5 @@ contact
 
 @endsection
 @section('script')
-
-
 
 @endsection
