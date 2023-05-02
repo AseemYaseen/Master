@@ -21,38 +21,25 @@ result
 @section('content')
 
 <h1 class="headerResults">What we have found on your choices :</h1>
+
         <div class="choices">
-            <p>2 - 5 Days</p>
-            <p>100 - 300 JOD</p>
+            <p>{{$lastResult->stay}}</p>
+            <p>{{$lastResult->budget_Range}}JD</p>
             <a href="./Home.html">Want to make another choice?</a>
         </div>
-                <section class="section2Results">    
-                <div class="result1">
-                    <h2>Apartments</h2>
-                    <div class="resultsCenter">
+        <section class="section2Results">    
+            <div class="result1">
+                <h2>Apartments</h2>
+                <div class="resultsCenter">
+                        @foreach ($appartments as $appartment)
                         <figure>
-                            <img class="imageApar" src="./MasterPiece-Pic/Results/apar1.jpg">
-                            <figcaption><p class="descriptionApar">1 bed room / 1 bath room / air-condition/ Tv / WIFI</p>
-                                <p class="locationApar">Located in Al-Rashed area / St 34 / Building number 88</p>
-                                <p class="priceApar">For <span>25 JOD</span> per nigh</p>
+                            <img class="imageApar" src="{{URL::asset("storage/image/$appartment->image")}}">
+                            <figcaption><p class="descriptionApar">{{$appartment->description}}</p>
+                                <p class="locationApar">{{$appartment->location}}</p>
+                                <p class="priceApar">For <span>{{$appartment->price}} JD</span> per nigh</p>
                             </figcaption>
                         </figure>
-
-                        <figure>
-                            <img class="imageApar" src="./MasterPiece-Pic/Results/apar2.jpg" alt="Apar">
-                            <figcaption><p class="descriptionApar">2 bed room / 1 bath room / air-condition/ Tv / WIFI / small kitchen</p>
-                                <p class="locationApar">Located in Al-Moqablien area / St 11 / Building number 21</p>
-                                <p class="priceApar">For <span>39 JOD</span> per nigh</p>
-                            </figcaption>
-                        </figure>
-
-                        <figure>
-                            <img class="imageApar" src="./MasterPiece-Pic/Results/apar3.png" alt="Apar">
-                            <figcaption><p class="descriptionApar">2 bed room / 1 bath room / air-condition/ Tv / small kitchen</p>
-                            <p class="locationApar">Located in Al-Moqablien area / St 11 / Building number 21</p>
-                            <p class="priceApar">For <span>31 JOD</span> per nigh</p>
-                            </figcaption>
-                        </figure>
+                        @endforeach
                     </div>
                     <p class="avalSure">did you like a place and want to make sure it's avalible?</p>
                     <a href="./contact_us.html" class="contactApar">Contact us</a>
@@ -75,7 +62,7 @@ result
                             </figcaption>
                         </figure>
 
-                        <figure>
+                      {{--   <figure>
                             <img class="imageApar" src="./MasterPiece-Pic/Results/Shahrazad.png" alt="Apar">
                             <figcaption><p class="descriptionApar">Shahrazad Restaurant Mosbah</p>
                                 <p class="locationApar">Located in Downtown, Amman</p>
@@ -89,7 +76,7 @@ result
                             <p class="locationApar">Wadi Saqra st, Amman</p>
                             <p class="priceApar">From <span>1.5 JOD</span> per meal</p>
                             </figcaption>
-                        </figure>
+                        </figure> --}}
                     </div>
                 </div>
             </section>

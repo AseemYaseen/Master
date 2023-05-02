@@ -36,9 +36,7 @@ class AppartmentController extends Controller
         $ranges= range::all();
         return view('Admin.AppartmentsAdd', compact('ranges'));
     }
-
-  
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -89,10 +87,9 @@ class AppartmentController extends Controller
     public function show(Appartment $range,$id)
     {
         $AppartmentDetails = Appartment::findorFail($id);
-        $range = range::findorFail($AppartmentDetails->ranges_id);
+        // $range = range::findorFail($AppartmentDetails->ranges_id);
 
-  
-        return view('Admin.AppartmentsDetails',compact('AppartmentDetails', 'range'));
+        return view('Admin.AppartmentsDetails',compact('AppartmentDetails'));
     }
 
 

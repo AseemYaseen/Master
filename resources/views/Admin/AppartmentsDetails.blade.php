@@ -55,8 +55,21 @@ Categories Details
           <hr>
           <div class="col-12 col-sm-6">
             {{-- {{dd($playgroundsDetails->Categories)}} --}}
-            
-            <h3 class="my-3"> <p style="font-size:22px;">Min Range</p>{{$AppartmentDetails->range->budget_Range }}</h3>
+            @if($AppartmentDetails->ranges_id == 'under100')
+            <h3 class="my-3"> <p style="font-size:22px;">Min Range</p>Under 100</h3>
+            @endif
+            @if($AppartmentDetails->ranges_id == '100To300')
+            <h3 class="my-3"> <p style="font-size:22px;">Min Range</p>100 To 300</h3>
+            @endif
+
+            @if($AppartmentDetails->ranges_id == '300To700')
+            <h3 class="my-3"> <p style="font-size:22px;">Min Range</p>300 To 700</h3>
+            @endif
+
+            @if($AppartmentDetails->ranges_id == 'more700')
+            <h3 class="my-3"> <p style="font-size:22px;">Min Range</p>More than 700</h3>
+            @endif
+
             <hr>
           <div class="bg-gray py-2 px-3 mt-4">
             <h3 class="mb-0">

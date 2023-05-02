@@ -84,9 +84,9 @@ class RestaurantController extends Controller
     public function show(Restaurant $range,$id)
     {
         $RestaurantsDetails = Restaurant::findorFail($id);
-        $range = range::findorFail($RestaurantsDetails->ranges_id);
+        // $range = range::findorFail($RestaurantsDetails->ranges_id);
 
-        return view('Admin.RestaurantsDetails',compact('RestaurantsDetails', 'range'));
+        return view('Admin.RestaurantsDetails',compact('RestaurantsDetails'));
     }
 
     /**

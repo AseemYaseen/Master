@@ -76,7 +76,7 @@ public function store(Request $request)
      */
     public function show(Contact $contact)
     {
-        //
+        
     }
 
     /**
@@ -108,8 +108,9 @@ public function store(Request $request)
      * @param  \App\Models\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contact $contact)
+    public function destroy(Contact $contact, $id)
     {
-        //
+        Contact::destroy($id);
+        return redirect()->route('Contact.index');
     }
 }
