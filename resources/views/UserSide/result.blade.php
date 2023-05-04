@@ -54,15 +54,18 @@ result
                 <div class="result1">
                     <h2>Restaurants</h2>
                     <div class="resultsCenter">
+                        @foreach ($restaurants as $restaurant)
                         <figure>
-                            <img class="imageApar" src="./MasterPiece-Pic/Results/hashem.jpg">
-                            <figcaption><p class="descriptionApar">Hashem Restaurant</p>
-                                <p class="locationApar">Located in Al-Amir Mohammed St Downtown</p>
-                                <p class="priceApar">From <span>3 JOD</span> per meal</p>
+                            <img class="imageApar" src="{{URL::asset("storage/image/$restaurant->image")}}">
+                            <figcaption><p class="nameRest">{{$restaurant->name}}</p>
+                            <figcaption><p class="descriptionApar">{{$restaurant->description}}</p>
+                                <p class="locationApar">{{$restaurant->location}}</p>
+                                <p class="priceApar">From <span>{{$restaurant->price}} JOD</span> per meal</p>
                             </figcaption>
                         </figure>
+                        @endforeach
 
-                      {{--   <figure>
+                        {{-- <figure>
                             <img class="imageApar" src="./MasterPiece-Pic/Results/Shahrazad.png" alt="Apar">
                             <figcaption><p class="descriptionApar">Shahrazad Restaurant Mosbah</p>
                                 <p class="locationApar">Located in Downtown, Amman</p>
@@ -184,14 +187,14 @@ result
                     <p id="summaryTable"></p>
                     
                     <tr>
-                        <td><p class="avarege4">in avarege 1 person for 2 -5 days in Amman Need about <span>97</span> to <span>242.5</span> JOD Or <span>48.5</span> JOD per day for choices like:
+                        <td><p class="avarege4">in avarege 1 person for {{$lastResult->stay}} day(s) in Amman Need about <span>{{$LowestPlus}}</span> to <span>{{$highestPlus}}</span> JOD Or <span>{{$AverPlus}}</span> JOD per day for choices like:
                         </p></td>
                     </tr>
                     <tr>
                         <td>
                             <ul class="ulResults">
-                            <li>Apartment for <span>31</span> JOD per day</li>
-                            <li><span>2.5</span> JOD restaurant price per meal</li>
+                            <li>Apartment for around <span>{{$AparaveragePrice}}</span> JOD per day</li>
+                            <li><span>{{$RestaveragePrice}}</span> JOD restaurant price per meal</li>
                             <li><span>15</span> JOD for other activites (fun , transportation, Other .. )</li>
                             </ul>
                         </td>

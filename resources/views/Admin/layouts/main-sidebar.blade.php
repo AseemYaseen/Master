@@ -98,16 +98,13 @@
                 <i class="nav-icon fas fa-tree"></i>
                 <p>Restaurants</p>
               </a>
-            </li>
-
+            </li> 
             <li class="nav-item">
               <a href="{{route('Contact.index')}}" class="nav-link">
                 <i class="nav-icon fas fa-edit"></i>
                 <p>Users Messages</p>
               </a>
             </li>
-
-
 
         {{-- <li class="nav-header">LABELS</li>
         <li class="nav-item">

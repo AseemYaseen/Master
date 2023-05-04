@@ -64,7 +64,7 @@ class RestaurantController extends Controller
         $Restaurant->price = $validatedData['price'];
         $Restaurant->description = $validatedData['description'];
         $Restaurant->ranges_id = $validatedData['value'];
-    
+        
         $photoName = $request->file('image')->getClientOriginalName();
         $request->file('image')->storeAs('public/image', $photoName);
         $Restaurant->image = $photoName;

@@ -428,7 +428,7 @@ font-size: 20px;
     height: 115%;
   } 
 
-  .offerG4FA a{
+  .offerG4 a{
     text-decoration: none;
     display: inline-block;
     color: rgb(255, 255, 255);
@@ -547,7 +547,7 @@ footer .contact {
 padding:  10px 0 0 0;
  }
  .logofoot{
-    padding: 0 0 0 10%;
+    padding: 0 25% 0 0;
  }
 
  .myLogo{

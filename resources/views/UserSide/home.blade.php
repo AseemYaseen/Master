@@ -41,7 +41,6 @@ home
           </div>
         </div>
       
-
       <a href="#">
         <div class="card 1">
           <div class="card_image_soon"> <img src="./MasterPiece-Pic/Aqaba1.jpg" /> </div>
@@ -141,7 +140,7 @@ home
                    
                         <p class="moreInfo1">for more info talk to us</p>
                         
-                        <a href="./contact_us.html">Contact us</a>
+                        <a href="{{route('contact')}}">Contact us</a>
                     </div>
                 </div>
             </div>

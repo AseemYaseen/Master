@@ -13,13 +13,27 @@ class ResultsController extends Controller
     public function index()
     {
         $lastResult = range::orderBy('id', 'desc')->first();
-    
+        
         if (auth()->check()) {
             // Get the apartments data that have the same range_id as the last result
             $appartments = Appartment::where('ranges_id', $lastResult->budget_Range)->get();
+
+            $AparaveragePrice = $appartments->avg('price');
+            $AparhighestPrice = $appartments->max('price');
+            $AparlowestPrice = $appartments->min('price');
+
             $restaurants = Restaurant::where('ranges_id', $lastResult->budget_Range)->get();
+
+            $RestaveragePrice = $restaurants->avg('price');
+            $ResthighestPrice = $restaurants->max('price');
+            $RestlowestPrice = $restaurants->min('price');
+
+            $highestPlus = $AparhighestPrice + $ResthighestPrice; 
+            $LowestPlus = $AparlowestPrice + $RestlowestPrice ; 
+            $AverPlus = ($highestPlus + $LowestPlus)/2 ; 
             
-            return view('userSide.result', compact('lastResult', 'appartments', 'restaurants'));
+            
+            return view('userSide.result', compact('lastResult', 'appartments', 'restaurants', 'AparhighestPrice', 'AparlowestPrice', 'AparaveragePrice', 'ResthighestPrice', 'RestlowestPrice', 'RestaveragePrice' , 'highestPlus', 'LowestPlus', 'AverPlus'));
         } else {
             return redirect()->route('user.login');
         }
