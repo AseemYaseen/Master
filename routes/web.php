@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\RangeController;
 use App\Http\Controllers\Admin\AppartmentController;
 use App\Http\Controllers\Admin\RestaurantController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\AdminDashboardController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -45,14 +46,7 @@ Route::middleware(['auth','verified','Admin'])->group(function () {
     Route::resource('/Restaurants', RestaurantController::class);
     Route::resource('/ranges', RangeController::class);
     Route::resource('/Contact', ContactController::class);
-    Route::get('/dashboard', function () {
-        return view('Admin.welcome');
-    })->name('dashboard');
-
-    Route::get('/dashboard/cities', function () {
-        return view('Admin.cities');
-    })->name('cities');
-    
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 });
 
 
