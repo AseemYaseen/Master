@@ -283,7 +283,7 @@ footer .contact {
 padding:  10px 0 0 0;
  }
  .logofoot{
-    padding: 0 0 0 80px;
+    padding: 0 25% 0 0;
  }
 
  .myLogo{
@@ -294,11 +294,11 @@ padding:  10px 0 0 0;
     font-size: 22px;
  }
  .fa-brands{
-    padding: 0 10px 0 10px;
+    padding: 0 2% 0 2%;
     transition: 0.5s;
  }
 .fa-regular{
-    padding: 0 10px 0 10px;
+    padding: 0 2% 0 2%;
     transition: 0.5s;
 }
 .iconsFo a{
@@ -316,3 +316,68 @@ color: white
     scale: 1.3;
     color: #ffae00;
 }
+
+.up {
+    position: fixed;
+    bottom: 60px;
+    right: -70px;
+    background-color: #1a4181;
+    color: #DDD;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 7px;
+    border-radius: 4px;
+    font-family: Arial,Tahoma;
+    cursor: pointer;
+
+ }
+
+ .up img{
+    width: 100px;
+    height: 70px;
+
+ }
+
+ .up.show {
+    right: 35px;
+ }
+
+
+ @media screen and (max-width:361px){
+
+    .theNavItems{
+        display: none;
+    }
+    .dropdown{
+        display: inline;
+    }
+    .Welcome{
+        color: white;
+        padding: 7% 0 4% 0px;
+        font-size: 40px;
+    }
+    .iconsFo{
+        font-size: 10px;
+     }
+ }
+
+
+ @media screen and (min-width:361px) and (max-width:600px) {
+    .theNavItems{
+        display: none;
+    }
+    .dropdown{
+        display: inline;
+    }
+    .Welcome{
+        color: white;
+        padding: 7% 0 4% 0px;
+        font-size: 40px;
+    }
+    .iconsFo{
+        font-size: 15px;
+     }
+     .footer{
+        padding: 0 0% 0 0%;
+    }
+ }

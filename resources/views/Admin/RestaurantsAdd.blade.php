@@ -34,7 +34,7 @@ Add Restaurant
 
                 <div class="form-group">
                   <label for="exampleInputEmail1">Restaurant Name</label>
-                  <input type="text" class="form-control @error('location') is-invalid @enderror" name="name" placeholder="Enter Location" value="{{ old('name') }}">
+                  <input type="text" class="form-control @error('location') is-invalid @enderror" name="name" placeholder="Enter Name" value="{{ old('name') }}">
                   @error('name')
                     <div class="invalid-feedback">{{ $message }}</div>
                   @enderror

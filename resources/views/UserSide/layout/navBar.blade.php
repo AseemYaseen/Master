@@ -3,8 +3,8 @@
 
         <ul class="theNavItems">
             <li><a class="active" href="{{route('home')}}">Home</a></li>
-            <li><a href="{{route('contact')}}">Contact us</a></li>
-            <li><a href="{{route('about')}}">About us</a></li>
+            <li><a class="active1" href="{{route('contact')}}">Contact us</a></li>
+            <li><a class="active2" href="{{route('about')}}">About us</a></li>
         </ul>
         <!-- <div class="SearchBar">   
             <input class="searchInp" type="text" placeholder="Search...">

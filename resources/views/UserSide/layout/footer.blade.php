@@ -17,6 +17,7 @@ a {
     color: #fff;
     background: linear-gradient(0deg, rgba(4, 30, 61, 0.8) 75%, rgba(0, 0, 0, 0.8) 100%);
 }
+
 .footer-wave-svg {
     background-color: transparent;
     display: block;
@@ -131,10 +132,6 @@ a {
     color: #fff;
     text-decoration: none;
 }
-
-
-
-
 
 .footer-social-links {
     bottom: 0;

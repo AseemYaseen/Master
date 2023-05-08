@@ -59,8 +59,8 @@ class RestaurantController extends Controller
         ]);
     
         $Restaurant = new Restaurant();
-        $Restaurant->location = $validatedData['location'];
         $Restaurant->name = $validatedData['name'];
+        $Restaurant->location = $validatedData['location'];
         $Restaurant->price = $validatedData['price'];
         $Restaurant->description = $validatedData['description'];
         $Restaurant->ranges_id = $validatedData['value'];

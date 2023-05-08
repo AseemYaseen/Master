@@ -25,7 +25,7 @@ result
         <div class="choices">
             <p>{{$lastResult->stay}}</p>
             <p>{{$lastResult->budget_Range}}JD</p>
-            <a href="./Home.html">Want to make another choice?</a>
+            <a href="{{route('home')}}">Want to make another choice?</a>
         </div>
         <section class="section2Results">    
             <div class="result1">
@@ -42,7 +42,7 @@ result
                         @endforeach
                     </div>
                     <p class="avalSure">did you like a place and want to make sure it's avalible?</p>
-                    <a href="./contact_us.html" class="contactApar">Contact us</a>
+                    <a href="{{route('contact')}}" class="contactApar">Contact us</a>
                 </div>
             </section>
 
@@ -215,7 +215,7 @@ result
                         <p>3-Two meals in day (breakfast , Lunch)</p>
                         <p>4-Tourism program around Amman (old town , Malls)</p>
                         <p>And there is more !</p>
-                        <a href="./contact_us.html" class="contactApar3">Contact us</a>
+                        <a href="{{route('contact')}}" class="contactApar3">Contact us</a>
                     </div>
                 </div>
      </section>

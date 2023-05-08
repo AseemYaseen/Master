@@ -39,16 +39,9 @@ body{
     background: linear-gradient(0deg, rgba(52, 92, 142, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%);  
 }
 
-.dropdown{
-    display: none;
-}
-
 .Logo{
     width: 70px;
     height: 70px;
-}
-nav ul{
-    padding: 0 0 0 5%;
 }
 nav li {
     list-style: none;
@@ -56,14 +49,12 @@ nav li {
     padding: 8px 0px;
     color: white;
     cursor: pointer;
-    
 }
 nav ul li{
     list-style: none;
     display: inline-block;
     padding: 8px 24px;
     color: white;
-    
 }
 nav ul li a{
     color: white;
@@ -526,9 +517,9 @@ footer .contact {
     padding: 3px;
 }
  */
-.footer{
-    padding: 0 80px 0 80px;
-}
+/* .footer{
+    padding: 0 0 0 9%;
+} */
 .ftr{
 
 }

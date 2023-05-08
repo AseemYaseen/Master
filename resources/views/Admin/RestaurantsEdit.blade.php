@@ -41,18 +41,23 @@
                 @csrf
                <div class="card-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Playground Name</label>
-                  <input type="text" class="form-control" name="name" value="{{$RestaurantsEdit->location}}">
+                  <label for="exampleInputEmail1">Restaurant Name</label>
+                  <input type="text" class="form-control" name="name" value="{{$RestaurantsEdit->name}}">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Restaurant Location</label>
+                  <input type="text" class="form-control" name="location" value="{{$RestaurantsEdit->location}}">
                 </div>
                 <div>
-                  <label for="exampleInputEmail1"> price for Hour</label>
+                  <div class="form-group">
+                  <label for="exampleInputEmail1"> price per meal</label>
                   <input type="text" class="form-contrvol" name="price" value="{{$RestaurantsEdit->price}}">
                 </div>
+                <div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Description</label>
                   <input  rows="4" cols="50" type="text" class="form-control desss" name="description" value="{{$RestaurantsEdit->description}}">
                 </div>
-
                 <div class="row">
                     <div class="col-sm-6">
                       <!-- select -->
