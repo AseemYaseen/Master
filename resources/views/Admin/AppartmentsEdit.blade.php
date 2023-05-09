@@ -58,11 +58,17 @@
                       <!-- select -->
                       <div class="form-group">
                           <label>Choose a Category</label>
-                          <select name="category_id" class="custom-select">
+                          {{-- <select name="category_id" class="custom-select">
                             @foreach($AppartmentsRange as $Range)
                           <option value="{{$Range->id}}"> {{$Range->budget_Range}}</option>
-                          {{-- isset($movie->image) ? $movie->image->movie_image : "" --}}
                           @endforeach
+                        </select> --}}
+                        <select name="ranges_id" class="custom-select @error('value') is-invalid @enderror">
+                          <option value="">Select a Range</option>
+                          <option value="under100" {{ old('value') == 1 ? 'selected' : '' }}>Under 100</option> 
+                          <option value="100To300" {{ old('value') == 2 ? 'selected' : '' }}>100 to 300</option> 
+                          <option value="300To700" {{ old('value') == 3 ? 'selected' : '' }}>300 to 700</option> 
+                          <option value="more700" {{ old('value') == 4 ? 'selected' : '' }}>More than 700</option> 
                         </select>
                       </div>
                     </div>

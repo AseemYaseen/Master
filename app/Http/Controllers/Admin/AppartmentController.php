@@ -118,6 +118,7 @@ class AppartmentController extends Controller
     public function update(Request $request, $id)
     {
         $AppartmentsUpdate = Appartment::findorFail($id);
+        $AppartmentsUpdate->ranges_id = $request->input('ranges_id');
         $AppartmentsUpdate->update($request->all());
         return redirect()->route('Appartments.index');
     }
