@@ -42,7 +42,7 @@
                <div class="card-body">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Playground Name</label>
-                  <input type="text" class="form-control" name="name" value="{{$AppartmentsEdit->location}}">
+                  <input type="text" class="form-control" name="location" value="{{$AppartmentsEdit->location}}">
                 </div>
                 <div>
                   <label for="exampleInputEmail1"> price for Hour</label>

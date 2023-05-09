@@ -45,11 +45,11 @@ Route::middleware(['auth','verified','Admin'])->group(function () {
     Route::resource('/Appartments', AppartmentController::class);
     Route::resource('/Restaurants', RestaurantController::class);
     Route::resource('/ranges', RangeController::class);
-    Route::resource('/Contact', ContactController::class);
     Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 });
 
 
+Route::resource('/Contact', ContactController::class);
 Route::name('user.')->prefix('user')->group(function () {
     Route::get('/login', [LoginUserController::class, 'index'])->name('login');
     Route::post('/logina', [LoginUserController::class, 'LoginPost'])->name('loginPost');

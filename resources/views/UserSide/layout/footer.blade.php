@@ -257,7 +257,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     max-width: 1230px;
-    padding: 40px 15px 1050px;
+    padding: 40px 15px 0px;
     position: relative;
   }
 }
@@ -266,7 +266,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     max-width: 1230px;
-    padding: 40px 15px 1050px;
+    padding: 40px 15px 0px;
     position: relative;
   }
 }
@@ -275,7 +275,7 @@ a {
     margin-left: auto;
     margin-right: auto;
     max-width: 1230px;
-    padding: 40px 15px 1050px;
+    padding: 40px 15px 0px;
     position: relative;
   }
 }

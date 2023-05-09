@@ -6,6 +6,16 @@
             <li><a class="active1" href="{{route('contact')}}">Contact us</a></li>
             <li><a class="active2" href="{{route('about')}}">About us</a></li>
         </ul>
+
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+                <a class="active" href="{{route('home')}}">Home</a>
+                <a class="active1" href="{{route('contact')}}">Contact us</a>
+                <a class="active2" href="{{route('about')}}">About us</a>
+            </div>
+          </div>
+          
         <!-- <div class="SearchBar">   
             <input class="searchInp" type="text" placeholder="Search...">
             <a href="#">
