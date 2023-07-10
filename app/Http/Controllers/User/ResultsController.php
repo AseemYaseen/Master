@@ -15,7 +15,7 @@ class ResultsController extends Controller
         $lastResult = range::orderBy('id', 'desc')->first();
         
         if (auth()->check()) {
-            //Tjis is to get the apartments data that have the same range_id as the last result
+            //this is to get the apartments data that have the same range_id as the last result
             $appartments = Appartment::where('ranges_id', $lastResult->budget_Range)->get();
 
             $AparaveragePrice = number_format($appartments->avg('price'), 1);
